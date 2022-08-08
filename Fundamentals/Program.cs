@@ -11,7 +11,20 @@ namespace Fundamentals
     {
         static void Main(string[] args)
         {
-           
+            int number = int.MaxValue;
+
+            try
+            {
+                checked
+                {
+                    number = number * 100;
+                }
+            }
+            catch (OverflowException e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
